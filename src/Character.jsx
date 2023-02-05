@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import loader from './assets/loader9999.svg';
+import loader from './assets/loader.svg';
 
 export const Character = () => {
   const [data, setData] = useState(null);
@@ -21,7 +21,7 @@ export const Character = () => {
         setTimeout(() => {
           setData(data)
           console.log("Delayed for 10 second.");
-        }, "10000")
+        }, "1000")
           // setData(data)
           console.log("data => ", data);
       })
@@ -53,7 +53,7 @@ export const Character = () => {
         <p>{data.starships}</p>
         <p>{data.vehicles}</p>
        </> :
-       <div style={{width: '100px', height: '100px'}}>
+       <div className='loader-container'>
         <img className='loader' src={loader} />
        </div>
       }
