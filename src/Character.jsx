@@ -48,7 +48,9 @@ export const Character = () => {
         <p>{data.birth_year}</p>
         <p>{data.gender}</p>
         <p>{data.homeworld}</p>
-        <p>{data.films}</p>
+        {data.films.map(film => (
+          <a style={{display: 'block'}} href={film}>{film}</a>
+        ))}
         <p>{data.species}</p>
         <p>{data.starships}</p>
         <p>{data.vehicles}</p>
