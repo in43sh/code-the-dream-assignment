@@ -1,67 +1,67 @@
 import { useState, useEffect } from 'react'
 
 export const Film = () => {
-  const localData = {
-	"title": "A New Hope",
-	"episode_id": 4,
-	"opening_crawl": "It is a period of civil war.\r\nRebel spaceships, striking\r\nfrom a hidden base, have won\r\ntheir first victory against\r\nthe evil Galactic Empire.\r\n\r\nDuring the battle, Rebel\r\nspies managed to steal secret\r\nplans to the Empire's\r\nultimate weapon, the DEATH\r\nSTAR, an armored space\r\nstation with enough power\r\nto destroy an entire planet.\r\n\r\nPursued by the Empire's\r\nsinister agents, Princess\r\nLeia races home aboard her\r\nstarship, custodian of the\r\nstolen plans that can save her\r\npeople and restore\r\nfreedom to the galaxy....",
-	"director": "George Lucas",
-	"producer": "Gary Kurtz, Rick McCallum",
-	"release_date": "1977-05-25",
-	"characters": [
-		"https://swapi.dev/api/people/1/",
-		"https://swapi.dev/api/people/2/",
-		"https://swapi.dev/api/people/3/",
-		"https://swapi.dev/api/people/4/",
-		"https://swapi.dev/api/people/5/",
-		"https://swapi.dev/api/people/6/",
-		"https://swapi.dev/api/people/7/",
-		"https://swapi.dev/api/people/8/",
-		"https://swapi.dev/api/people/9/",
-		"https://swapi.dev/api/people/10/",
-		"https://swapi.dev/api/people/12/",
-		"https://swapi.dev/api/people/13/",
-		"https://swapi.dev/api/people/14/",
-		"https://swapi.dev/api/people/15/",
-		"https://swapi.dev/api/people/16/",
-		"https://swapi.dev/api/people/18/",
-		"https://swapi.dev/api/people/19/",
-		"https://swapi.dev/api/people/81/"
-	],
-	"planets": [
-		"https://swapi.dev/api/planets/1/",
-		"https://swapi.dev/api/planets/2/",
-		"https://swapi.dev/api/planets/3/"
-	],
-	"starships": [
-		"https://swapi.dev/api/starships/2/",
-		"https://swapi.dev/api/starships/3/",
-		"https://swapi.dev/api/starships/5/",
-		"https://swapi.dev/api/starships/9/",
-		"https://swapi.dev/api/starships/10/",
-		"https://swapi.dev/api/starships/11/",
-		"https://swapi.dev/api/starships/12/",
-		"https://swapi.dev/api/starships/13/"
-	],
-	"vehicles": [
-		"https://swapi.dev/api/vehicles/4/",
-		"https://swapi.dev/api/vehicles/6/",
-		"https://swapi.dev/api/vehicles/7/",
-		"https://swapi.dev/api/vehicles/8/"
-	],
-	"species": [
-		"https://swapi.dev/api/species/1/",
-		"https://swapi.dev/api/species/2/",
-		"https://swapi.dev/api/species/3/",
-		"https://swapi.dev/api/species/4/",
-		"https://swapi.dev/api/species/5/"
-	],
-	"created": "2014-12-10T14:23:31.880000Z",
-	"edited": "2014-12-20T19:49:45.256000Z",
-	"url": "https://swapi.dev/api/films/1/"
-}
+//   const localData = {
+// 	"title": "A New Hope",
+// 	"episode_id": 4,
+// 	"opening_crawl": "It is a period of civil war.\r\nRebel spaceships, striking\r\nfrom a hidden base, have won\r\ntheir first victory against\r\nthe evil Galactic Empire.\r\n\r\nDuring the battle, Rebel\r\nspies managed to steal secret\r\nplans to the Empire's\r\nultimate weapon, the DEATH\r\nSTAR, an armored space\r\nstation with enough power\r\nto destroy an entire planet.\r\n\r\nPursued by the Empire's\r\nsinister agents, Princess\r\nLeia races home aboard her\r\nstarship, custodian of the\r\nstolen plans that can save her\r\npeople and restore\r\nfreedom to the galaxy....",
+// 	"director": "George Lucas",
+// 	"producer": "Gary Kurtz, Rick McCallum",
+// 	"release_date": "1977-05-25",
+// 	"characters": [
+// 		"https://swapi.dev/api/people/1/",
+// 		"https://swapi.dev/api/people/2/",
+// 		"https://swapi.dev/api/people/3/",
+// 		"https://swapi.dev/api/people/4/",
+// 		"https://swapi.dev/api/people/5/",
+// 		"https://swapi.dev/api/people/6/",
+// 		"https://swapi.dev/api/people/7/",
+// 		"https://swapi.dev/api/people/8/",
+// 		"https://swapi.dev/api/people/9/",
+// 		"https://swapi.dev/api/people/10/",
+// 		"https://swapi.dev/api/people/12/",
+// 		"https://swapi.dev/api/people/13/",
+// 		"https://swapi.dev/api/people/14/",
+// 		"https://swapi.dev/api/people/15/",
+// 		"https://swapi.dev/api/people/16/",
+// 		"https://swapi.dev/api/people/18/",
+// 		"https://swapi.dev/api/people/19/",
+// 		"https://swapi.dev/api/people/81/"
+// 	],
+// 	"planets": [
+// 		"https://swapi.dev/api/planets/1/",
+// 		"https://swapi.dev/api/planets/2/",
+// 		"https://swapi.dev/api/planets/3/"
+// 	],
+// 	"starships": [
+// 		"https://swapi.dev/api/starships/2/",
+// 		"https://swapi.dev/api/starships/3/",
+// 		"https://swapi.dev/api/starships/5/",
+// 		"https://swapi.dev/api/starships/9/",
+// 		"https://swapi.dev/api/starships/10/",
+// 		"https://swapi.dev/api/starships/11/",
+// 		"https://swapi.dev/api/starships/12/",
+// 		"https://swapi.dev/api/starships/13/"
+// 	],
+// 	"vehicles": [
+// 		"https://swapi.dev/api/vehicles/4/",
+// 		"https://swapi.dev/api/vehicles/6/",
+// 		"https://swapi.dev/api/vehicles/7/",
+// 		"https://swapi.dev/api/vehicles/8/"
+// 	],
+// 	"species": [
+// 		"https://swapi.dev/api/species/1/",
+// 		"https://swapi.dev/api/species/2/",
+// 		"https://swapi.dev/api/species/3/",
+// 		"https://swapi.dev/api/species/4/",
+// 		"https://swapi.dev/api/species/5/"
+// 	],
+// 	"created": "2014-12-10T14:23:31.880000Z",
+// 	"edited": "2014-12-20T19:49:45.256000Z",
+// 	"url": "https://swapi.dev/api/films/1/"
+// }
 
-//   const [data, setData] = useState(null);
+  const [data, setData] = useState(null);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(true);
 
@@ -69,31 +69,41 @@ export const Film = () => {
 //     setData(localData)
 //   }})
 
-//   useEffect(() => {
-//     fetch("https://swapi.dev/api/films/1")
-//       .then(response => {
-//         if (response.ok) {
-//           return response.json()
-//         }
-//         throw response;
-//       })
-//       .then(data => {
-//           setData(data)
-//           console.log("data => ", data);
-//       })
-//       .catch(error => {
-//           console.error("Error fetching data => ", error)
-//           setError(error);
-//         }
-//       )
-//       .finally(() => {
-//         setLoading(false);
-//       })
-//   }, []);
+  useEffect(() => {
+    console.log("123123123123123")
+    fetch("https://swapi.dev/api/films/1")
+      .then(response => {
+        if (response.ok) {
+          return response.json()
+        }
+        throw response;
+      })
+      .then(data => {
+          setData(data)
+          console.log("data => ", data);
+      })
+      .catch(error => {
+          console.error("Error fetching data => ", error)
+          setError(error);
+        }
+      )
+      .finally(() => {
+        setLoading(false);
+      })
+  }, []);
 
   return (
     <div className="App">
-        <h1>{localData.title}</h1>
+		<h1>{data.title}</h1>
+        <p>{data.director}</p>
+        <p>{data.producer}</p>
+        <p>{data.release_date}</p>
+        <p>{data.characters}</p>
+        <p>{data.planets}</p>
+        <p>{data.starships}</p>
+        <p>{data.vehicles}</p>
+        <p>{data.species}</p>
+        {/* <h1>{localData.title}</h1>
         <p>{localData.director}</p>
         <p>{localData.producer}</p>
         <p>{localData.release_date}</p>
@@ -101,7 +111,7 @@ export const Film = () => {
         <p>{localData.planets}</p>
         <p>{localData.starships}</p>
         <p>{localData.vehicles}</p>
-        <p>{localData.species}</p>
+        <p>{localData.species}</p> */}
     </div>
   )
 }
