@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import loader from './assets/loader.svg';
 
 export const Character = () => {
@@ -37,8 +37,17 @@ export const Character = () => {
       })
   }, []);
 
+  const getIdFromLink = (url) => {
+    // const str = new URL(url).pathname.split('/').filter(Boolean).pop();
+    const str = new URL(url).pathname.split('/').filter(Boolean).pop();
+    // const str = url.substring(url.lastIndexOf('/') + 1)
+    console.log("str => ", str);
+    return str
+  }
+
   return (
     <div className="App">
+      <button onClick={getIdFromLink("https://swapi.dev/api/films/1/")}>click</button>
       {data ?
        <>
         <h1>{data.name}</h1>
@@ -53,7 +62,8 @@ export const Character = () => {
         <a href={data.homeworld}>{data.homeworld}</a>
         <p>films</p>
         {data.films.map(film => (
-          <a style={{display: 'block'}} href={film}>{film}</a>
+          // <a style={{display: 'block'}} href={`localhost:5173/film/` + getIdFromLink(film)}>{film}</a>
+          <Link style={{display: 'block'}} to={`/film/` + getIdFromLink(film)}>{film}</Link>
         ))}
 				<p>species</p>
         {data.species.map(specie => (

@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import loader from './assets/loader.svg';
 
 export const Film = () => {
@@ -30,6 +30,14 @@ export const Film = () => {
       })
   }, []);
 
+  const getIdFromLink = (url) => {
+    // const str = new URL(url).pathname.split('/').filter(Boolean).pop();
+    const str = new URL(url).pathname.split('/').filter(Boolean).pop();
+    // const str = url.substring(url.lastIndexOf('/') + 1)
+    console.log("str => ", str);
+    return str
+  }
+
   return (
     <div className="App">
 		{data ?
@@ -40,7 +48,8 @@ export const Film = () => {
 				<p>{data.release_date}</p>
 				<p>characters</p>
         {data.characters.map(character => (
-          <a style={{display: 'block'}} href={character}>{character}</a>
+          // <a style={{display: 'block'}} href={character}>{character}</a>
+          <Link style={{display: 'block'}} to={`/character/` + getIdFromLink(character)}>{character}</Link>
         ))}
 				<p>planets</p>
         {data.planets.map(planet => (
