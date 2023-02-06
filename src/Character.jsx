@@ -5,11 +5,9 @@ import loader from './assets/loader.svg';
 export const Character = () => {
   const { id } = useParams();
   const [data, setData] = useState(null);
+  const [dataFromLink, setDataFromLink] = useState(null);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(true);
-
-  // useEffect(() => {
-  // })
 
   useEffect(() => {
     fetch(`https://swapi.dev/api/people/${id}`)
@@ -31,14 +29,24 @@ export const Character = () => {
           console.log("data => ", data);
       })
       .catch(error => {
-          console.error("Error fetching data => ", error)
-          setError(error);
-        }
-      )
+        console.error("Error fetching data => ", error)
+        setError(error);
+      })
       .finally(() => {
         setLoading(false);
       })
   }, []);
+
+  useEffect(() => {
+    console.log("films =>>>> ", data.films);
+  //   data.films.forEach((obj, i) => {
+  //     console.log("msgFrom", obj.msgFrom + " msgBody", obj.msgBody);
+  // });
+    for (i in data.films) {
+      console.log("hello i'm here");
+      console.log(data.films[i]);
+    }
+  })
 
   const getIdFromLink = (url) => {
     // const str = new URL(url).pathname.split('/').filter(Boolean).pop();
@@ -48,9 +56,25 @@ export const Character = () => {
     return str
   }
 
+  const fetchDataAboutUrl = (url) => {
+    fetch(url)
+    .then(response => {
+      if (response.ok) {
+        return response.json();
+      }
+      throw response;
+    })
+    .then(data => {
+      console.log("data fetchDataAboutUrl =>> ", data)
+    })
+    .catch(error => {
+      setError(error)
+    })
+  }
+
   return (
     <div className="App">
-      {/* <button onClick={getIdFromLink("https://swapi.dev/api/films/1/")}>click</button> */}
+      <button onClick={() => fetchDataAboutUrl("https://swapi.dev/api/films/1/")}>click</button>
       {data ?
        <>
         <h1>{data.name}</h1>
