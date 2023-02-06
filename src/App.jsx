@@ -29,6 +29,15 @@ function App() {
   <BrowserRouter>
     <Routes>
         <Route path="/" index element={<Form/>} />
+        {/* <Route
+          path="/"
+          index element={
+            <Form
+              handleChange={(e) => handleChange(e)}
+              handleSubmit={(e) => handleSubmit(e)}
+              formValues={{ formValues }}
+              setFormValues={{ setFormValues }} />}
+            /> */}
         <Route path="/character/:id" index element={ <Character />} />
         <Route path="/film/:id" element={ <Film />} />
     </Routes>

@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import { useParams } from "react-router-dom";
+import loader from './assets/loader.svg';
 
 export const Film = () => {
   const { id } = useParams();
@@ -37,12 +38,30 @@ export const Film = () => {
 				<p>{data.director}</p>
 				<p>{data.producer}</p>
 				<p>{data.release_date}</p>
-				<p>{data.characters}</p>
-				<p>{data.planets}</p>
-				<p>{data.starships}</p>
-				<p>{data.vehicles}</p>
-				<p>{data.species}</p>
-			</> : <h1>loading</h1>
+				<p>characters</p>
+        {data.characters.map(character => (
+          <a style={{display: 'block'}} href={character}>{character}</a>
+        ))}
+				<p>planets</p>
+        {data.planets.map(planet => (
+          <a style={{display: 'block'}}>{planet}</a>
+        ))}
+        <p>starships</p>
+        {data.starships.map(starship => (
+          <a style={{display: 'block'}}>{starship}</a>
+        ))}
+				<p>vehicles</p>
+        {data.vehicles.map(vehicle => (
+          <a style={{display: 'block'}}>{vehicle}</a>
+        ))}
+				<p>species</p>
+        {data.species.map(specie => (
+          <a style={{display: 'block'}}>{specie}</a>
+        ))}
+			</> :
+      <div className='loader-container'>
+        <img className='loader' src={loader} />
+      </div>
 		}
     </div>
   )

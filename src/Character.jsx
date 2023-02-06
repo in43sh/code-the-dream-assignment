@@ -49,13 +49,24 @@ export const Character = () => {
         <p>{data.skin_color}</p>
         <p>{data.birth_year}</p>
         <p>{data.gender}</p>
-        <p>{data.homeworld}</p>
+        <p>homeworld</p>
+        <a href={data.homeworld}>{data.homeworld}</a>
+        <p>films</p>
         {data.films.map(film => (
           <a style={{display: 'block'}} href={film}>{film}</a>
         ))}
-        <p>{data.species}</p>
-        <p>{data.starships}</p>
-        <p>{data.vehicles}</p>
+				<p>species</p>
+        {data.species.map(specie => (
+          <a style={{display: 'block'}}>{specie}</a>
+        ))}
+        <p>starships</p>
+        {data.starships.map(starship => (
+          <a style={{display: 'block'}}>{starship}</a>
+        ))}
+				<p>vehicles</p>
+        {data.vehicles.map(vehicle => (
+          <a style={{display: 'block'}}>{vehicle}</a>
+        ))}
        </> :
        <div className='loader-container'>
         <img className='loader' src={loader} />

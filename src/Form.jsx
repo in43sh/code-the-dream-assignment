@@ -29,9 +29,9 @@ export const Form = () => {
         <>
             {isFormVisible ?
             <form onSubmit={handleSubmit}>
-                <input required type="radio" id="character" name="type" value="Character" onChange={handleChange}/>
+                <input required type="radio" id="character" name="type" value="character" onChange={handleChange}/>
                 <label htmlFor="character">Character</label><br />
-                <input required type="radio" id="film" name="type" value="Film" onChange={handleChange} />
+                <input required type="radio" id="film" name="type" value="film" onChange={handleChange} />
                 <label htmlFor="film">Film</label><br />
                 <input required type="number" id="number" name="id" value={formValues.id} onChange={handleChange} /><br/>
                 <button type="submit">Save</button>
