@@ -8,6 +8,9 @@ export const Character = () => {
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(true);
 
+  // useEffect(() => {
+  // })
+
   useEffect(() => {
     fetch(`https://swapi.dev/api/people/${id}`)
       .then(response => {
@@ -47,7 +50,7 @@ export const Character = () => {
 
   return (
     <div className="App">
-      <button onClick={getIdFromLink("https://swapi.dev/api/films/1/")}>click</button>
+      {/* <button onClick={getIdFromLink("https://swapi.dev/api/films/1/")}>click</button> */}
       {data ?
        <>
         <h1>{data.name}</h1>
@@ -59,23 +62,27 @@ export const Character = () => {
         <p>{data.birth_year}</p>
         <p>{data.gender}</p>
         <p>homeworld</p>
-        <a href={data.homeworld}>{data.homeworld}</a>
+        {/* <a href={data.homeworld}>{data.homeworld}</a> */}
+        <p>{ data.homeworld }</p>
         <p>films</p>
         {data.films.map(film => (
           // <a style={{display: 'block'}} href={`localhost:5173/film/` + getIdFromLink(film)}>{film}</a>
-          <Link style={{display: 'block'}} to={`/film/` + getIdFromLink(film)}>{film}</Link>
+          <Link style={{display: 'block'}} to={`/film/` + getIdFromLink(film)}>{ film }</Link>
         ))}
 				<p>species</p>
         {data.species.map(specie => (
-          <a style={{display: 'block'}}>{specie}</a>
+          // <a style={{display: 'block'}}>{specie}</a>
+          <p>{ specie }</p>
         ))}
         <p>starships</p>
         {data.starships.map(starship => (
-          <a style={{display: 'block'}}>{starship}</a>
+          // <a style={{display: 'block'}}>{starship}</a>
+          <p>{ starship }</p>
         ))}
 				<p>vehicles</p>
         {data.vehicles.map(vehicle => (
-          <a style={{display: 'block'}}>{vehicle}</a>
+          // <a style={{display: 'block'}}>{vehicle}</a>
+          <p>{ vehicle }</p>
         ))}
        </> :
        <div className='loader-container'>

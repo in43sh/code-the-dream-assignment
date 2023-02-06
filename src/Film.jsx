@@ -53,19 +53,23 @@ export const Film = () => {
         ))}
 				<p>planets</p>
         {data.planets.map(planet => (
-          <a style={{display: 'block'}}>{planet}</a>
+          // <a style={{display: 'block'}}>{planet}</a>
+          <p>{ planet }</p>
         ))}
         <p>starships</p>
         {data.starships.map(starship => (
-          <a style={{display: 'block'}}>{starship}</a>
+          // <a style={{display: 'block'}}>{starship}</a>
+          <p>{ starship }</p>
         ))}
 				<p>vehicles</p>
         {data.vehicles.map(vehicle => (
-          <a style={{display: 'block'}}>{vehicle}</a>
+          // <a style={{display: 'block'}}>{vehicle}</a>
+          <p> { vehicle }</p>
         ))}
 				<p>species</p>
         {data.species.map(specie => (
-          <a style={{display: 'block'}}>{specie}</a>
+          // <a style={{display: 'block'}}>{specie}</a>
+          <p> { specie }</p>
         ))}
 			</> :
       <div className='loader-container'>
