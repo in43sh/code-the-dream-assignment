@@ -1,13 +1,15 @@
 import { useState, useEffect } from 'react'
+import { useParams } from "react-router-dom";
 import loader from './assets/loader.svg';
 
 export const Character = () => {
+  const { id } = useParams();
   const [data, setData] = useState(null);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch("https://swapi.dev/api/people/1")
+    fetch(`https://swapi.dev/api/people/${id}`)
       .then(response => {
         if (response.ok) {
           return response.json();
@@ -18,11 +20,11 @@ export const Character = () => {
         // setTimeout(() => {
         //   console.log("Delayed for 1 second.");
         // }, "10000")
-        setTimeout(() => {
+        // setTimeout(() => {
+        //   setData(data)
+        //   console.log("Delayed for 10 second.");
+        // }, "1000")
           setData(data)
-          console.log("Delayed for 10 second.");
-        }, "1000")
-          // setData(data)
           console.log("data => ", data);
       })
       .catch(error => {
