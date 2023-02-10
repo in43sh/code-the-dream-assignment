@@ -1,3 +1,17 @@
+body {
+    font-family: SF Pro Display;
+}
+
+
+.section {
+    display: flex;
+    flex-direction: column;
+}
+
+.title {
+    font-size: 158px;
+}
+
 .loader-container {
     width: 100px;
     height: 100px;
