@@ -18,13 +18,6 @@ export const Character = () => {
         throw response;
       })
       .then(data => {
-        // setTimeout(() => {
-        //   console.log("Delayed for 1 second.");
-        // }, "10000")
-        // setTimeout(() => {
-        //   setData(data)
-        //   console.log("Delayed for 10 second.");
-        // }, "1000")
           setData(data)
           console.log("data => ", data);
       })
@@ -37,17 +30,6 @@ export const Character = () => {
       })
   }, []);
 
-  useEffect(() => {
-    console.log("films =>>>> ", data.films);
-  //   data.films.forEach((obj, i) => {
-  //     console.log("msgFrom", obj.msgFrom + " msgBody", obj.msgBody);
-  // });
-    for (i in data.films) {
-      console.log("hello i'm here");
-      console.log(data.films[i]);
-    }
-  })
-
   const getIdFromLink = (url) => {
     // const str = new URL(url).pathname.split('/').filter(Boolean).pop();
     const str = new URL(url).pathname.split('/').filter(Boolean).pop();
@@ -56,28 +38,28 @@ export const Character = () => {
     return str
   }
 
-  const fetchDataAboutUrl = (url) => {
-    fetch(url)
-    .then(response => {
-      if (response.ok) {
-        return response.json();
-      }
-      throw response;
-    })
-    .then(data => {
-      console.log("data fetchDataAboutUrl =>> ", data)
-    })
-    .catch(error => {
-      setError(error)
-    })
-  }
+  // const fetchDataAboutUrl = (url) => {
+  //   fetch(url)
+  //   .then(response => {
+  //     if (response.ok) {
+  //       return response.json();
+  //     }
+  //     throw response;
+  //   })
+  //   .then(data => {
+  //     console.log("data fetchDataAboutUrl =>> ", data)
+  //   })
+  //   .catch(error => {
+  //     setError(error)
+  //   })
+  // }
 
   return (
-    <div className="App">
-      <button onClick={() => fetchDataAboutUrl("https://swapi.dev/api/films/1/")}>click</button>
+    <div className="section">
+      {/* <button onClick={() => fetchDataAboutUrl("https://swapi.dev/api/films/1/")}>click</button> */}
       {data ?
-       <>
-        <h1>{data.name}</h1>
+      <>
+        <h1 className="title">{data.name}</h1>
         <p>{data.height}</p>
         <p>{data.mass}</p>
         <p>{data.hair_color}</p>
@@ -86,26 +68,21 @@ export const Character = () => {
         <p>{data.birth_year}</p>
         <p>{data.gender}</p>
         <p>homeworld</p>
-        {/* <a href={data.homeworld}>{data.homeworld}</a> */}
         <p>{ data.homeworld }</p>
         <p>films</p>
         {data.films.map(film => (
-          // <a style={{display: 'block'}} href={`localhost:5173/film/` + getIdFromLink(film)}>{film}</a>
           <Link style={{display: 'block'}} to={`/film/` + getIdFromLink(film)}>{ film }</Link>
         ))}
 				<p>species</p>
         {data.species.map(specie => (
-          // <a style={{display: 'block'}}>{specie}</a>
           <p>{ specie }</p>
         ))}
         <p>starships</p>
         {data.starships.map(starship => (
-          // <a style={{display: 'block'}}>{starship}</a>
           <p>{ starship }</p>
         ))}
 				<p>vehicles</p>
         {data.vehicles.map(vehicle => (
-          // <a style={{display: 'block'}}>{vehicle}</a>
           <p>{ vehicle }</p>
         ))}
        </> :

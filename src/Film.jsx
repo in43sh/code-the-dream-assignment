@@ -39,10 +39,10 @@ export const Film = () => {
   }
 
   return (
-    <div className="App">
+    <div className="container">
 		{data ?
 			<>
-				<h1>{data.title}</h1>
+				<h1 className="title">{data.title}</h1>
 				<p>{data.director}</p>
 				<p>{data.producer}</p>
 				<p>{data.release_date}</p>
