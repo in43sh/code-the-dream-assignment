@@ -38,7 +38,7 @@ function App() {
               formValues={{ formValues }}
               setFormValues={{ setFormValues }} />}
             /> */}
-        <Route path="/character/:id" index element={ <Character backgroundDark={true} />} />
+        <Route path="/character/:id" index element={ <Character backgroundDark={false} />} />
         <Route path="/film/:id" element={ <Film backgroundDark={true} />} />
     </Routes>
   </BrowserRouter>

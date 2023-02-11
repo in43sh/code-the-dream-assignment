@@ -1,8 +1,14 @@
 import { useState, useEffect } from 'react'
 import { useParams, Link } from "react-router-dom";
+import styled from "styled-components";
 import loader from './assets/images/loader.svg';
 
-export const Character = () => {
+const Section = styled.div`
+  background-color: ${(({ backgroundDark }) => (backgroundDark ? "var(--color-primary)" : "var(--color-secondary)"))};
+  color: ${(({ backgroundDark }) => (backgroundDark ? "var(--color-secondary" :"var(--color-primary)"))};
+`
+
+export const Character = ({ backgroundDark }) => {
   const { id } = useParams();
   const [data, setData] = useState(null);
   const [dataFromLink, setDataFromLink] = useState(null);
@@ -39,7 +45,8 @@ export const Character = () => {
   }
 
   return (
-    <div className="section">
+    <Section backgroundDark={backgroundDark} className="section">
+      {/* <div className="section"> */}
       {/* <button onClick={() => fetchDataAboutUrl("https://swapi.dev/api/films/1/")}>click</button> */}
       {data ?
       <>
@@ -76,7 +83,9 @@ export const Character = () => {
         <img className='loader' src={loader} />
        </div>
       }
-    </div>
+    {/* </div> */}
+    </Section>
+    
   )
 }
 

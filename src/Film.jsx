@@ -1,8 +1,14 @@
 import { useState, useEffect } from 'react'
 import { useParams, Link } from "react-router-dom";
+import styled from "styled-components";
 import loader from './assets/images/loader.svg';
 
-export const Film = () => {
+const Section = styled.div`
+  background-color: ${(({ backgroundDark }) => (backgroundDark ? "var(--color-primary)" : "var(--color-secondary)"))};
+  color: ${(({ backgroundDark }) => (backgroundDark ? "var(--color-secondary" :"var(--color-secondary)"))};
+`
+
+export const Film = ({ backgroundDark }) => {
   const { id } = useParams();
   const [data, setData] = useState(null);
   const [error, setError] = useState(null);
@@ -39,7 +45,8 @@ export const Film = () => {
   }
 
   return (
-    <div className="section">
+    <Section backgroundDark={backgroundDark} className='section'>
+{/* <div className="section"> */}
 		{data ?
 			<>
 				<h1 className="title">{data.title}</h1>
@@ -78,7 +85,8 @@ export const Film = () => {
         <img className='loader' src={loader} />
       </div>
 		}
-    </div>
+    {/* </div> */}
+    </Section>
   )
 }
 
