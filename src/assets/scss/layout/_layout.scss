@@ -10,7 +10,21 @@
 }
 
 .form {
+    &__radio {
+        font-size: 2rem;
+    }
 
+    &__label {
+        font-size: 2rem;
+    }
+
+    &__number {
+        font-size: 2rem;
+    }
+
+    &__submit {
+        font-size: 2rem;
+    }
 }
 
 .section {

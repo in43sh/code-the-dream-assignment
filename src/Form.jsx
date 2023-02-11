@@ -29,12 +29,12 @@ export const Form = () => {
         <div className="form-outer">
             {isFormVisible ?
             <form className="form" onSubmit={handleSubmit}>
-                <input required type="radio" id="character" name="type" value="character" onChange={handleChange}/>
-                <label htmlFor="character">Character</label><br />
-                <input required type="radio" id="film" name="type" value="film" onChange={handleChange} />
-                <label htmlFor="film">Film</label><br />
-                <input required type="number" id="number" name="id" value={formValues.id} onChange={handleChange} /><br/>
-                <button type="submit">Save</button>
+                <input className="form__radio" required type="radio" id="character" name="type" value="character" onChange={handleChange}/>
+                <label className="form__label" htmlFor="character">Character</label><br />
+                <input className="form__radio" required type="radio" id="film" name="type" value="film" onChange={handleChange} />
+                <label className="form__label" htmlFor="film">Film</label><br />
+                <input className="form__number" required type="number" id="number" name="id" value={formValues.id} onChange={handleChange} /><br/>
+                <button className="form__submit" type="submit">Save</button>
             </form> : <View data={formValues}/>
         }
         </div>

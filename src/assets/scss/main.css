@@ -90,6 +90,19 @@ body {
   color: var(--color-secondary);
 }
 
+.form__radio {
+  font-size: 2rem;
+}
+.form__label {
+  font-size: 2rem;
+}
+.form__number {
+  font-size: 2rem;
+}
+.form__submit {
+  font-size: 2rem;
+}
+
 .section {
   display: flex;
   flex-direction: column;
