@@ -79,6 +79,17 @@ body {
   --color-secondary: #D2CBA8;
 }
 
+.form-outer {
+  height: 100vh;
+  display: grid;
+  justify-content: space-evenly;
+  justify-items: center;
+  align-content: space-evenly;
+  align-items: center;
+  background-color: var(--color-primary);
+  color: var(--color-secondary);
+}
+
 .section {
   display: flex;
   flex-direction: column;

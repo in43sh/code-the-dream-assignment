@@ -26,9 +26,9 @@ export const Form = () => {
     const inputFileRef = useRef();
 
     return (
-        <>
+        <div className="form-outer">
             {isFormVisible ?
-            <form onSubmit={handleSubmit}>
+            <form className="form" onSubmit={handleSubmit}>
                 <input required type="radio" id="character" name="type" value="character" onChange={handleChange}/>
                 <label htmlFor="character">Character</label><br />
                 <input required type="radio" id="film" name="type" value="film" onChange={handleChange} />
@@ -37,7 +37,7 @@ export const Form = () => {
                 <button type="submit">Save</button>
             </form> : <View data={formValues}/>
         }
-        </>
+        </div>
     )
 }
 
