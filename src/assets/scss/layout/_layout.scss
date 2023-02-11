@@ -1,0 +1,42 @@
+.section {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--color-primary);
+    color: var(--color-secondary);
+    padding: 9rem 5rem;
+}
+
+.title {
+    font-size: 8rem;
+}
+
+
+.horizontal-line {
+    margin: 5rem 0;
+}
+
+.loader-container {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    left: 50%;
+    margin-left: -50px;
+    top: 50%;
+    margin-top: -50px;
+    display: flex;
+    justify-content: center;
+}
+
+@media only screen and (min-width: 768px) {
+    .section {
+        padding: 17.8rem 10rem;
+    }
+
+    .title {
+        font-size: 15.8rem;
+    }
+
+    .horizontal-line {
+        margin: 10rem 0;
+    }
+}

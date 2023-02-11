@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { useParams, Link } from "react-router-dom";
-import loader from './assets/loader.svg';
+import loader from './assets/images/loader.svg';
 
 export const Character = () => {
   const { id } = useParams();
@@ -38,28 +38,13 @@ export const Character = () => {
     return str
   }
 
-  // const fetchDataAboutUrl = (url) => {
-  //   fetch(url)
-  //   .then(response => {
-  //     if (response.ok) {
-  //       return response.json();
-  //     }
-  //     throw response;
-  //   })
-  //   .then(data => {
-  //     console.log("data fetchDataAboutUrl =>> ", data)
-  //   })
-  //   .catch(error => {
-  //     setError(error)
-  //   })
-  // }
-
   return (
     <div className="section">
       {/* <button onClick={() => fetchDataAboutUrl("https://swapi.dev/api/films/1/")}>click</button> */}
       {data ?
       <>
         <h1 className="title">{data.name}</h1>
+        <hr className='horizontal-line'/>
         <p>{data.height}</p>
         <p>{data.mass}</p>
         <p>{data.hair_color}</p>
@@ -67,16 +52,17 @@ export const Character = () => {
         <p>{data.skin_color}</p>
         <p>{data.birth_year}</p>
         <p>{data.gender}</p>
-        <p>homeworld</p>
-        <p>{ data.homeworld }</p>
+        <hr className='horizontal-line'/>
         <p>films</p>
         {data.films.map(film => (
           <Link style={{display: 'block'}} to={`/film/` + getIdFromLink(film)}>{ film }</Link>
         ))}
-				<p>species</p>
+				{/* <p>species</p>
         {data.species.map(specie => (
           <p>{ specie }</p>
         ))}
+        <p>homeworld</p>
+        <p>{ data.homeworld }</p>
         <p>starships</p>
         {data.starships.map(starship => (
           <p>{ starship }</p>
@@ -84,7 +70,7 @@ export const Character = () => {
 				<p>vehicles</p>
         {data.vehicles.map(vehicle => (
           <p>{ vehicle }</p>
-        ))}
+        ))} */}
        </> :
        <div className='loader-container'>
         <img className='loader' src={loader} />
