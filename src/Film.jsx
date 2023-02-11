@@ -51,15 +51,22 @@ export const Film = ({ backgroundDark }) => {
 			<>
 				<h1 className="title">{data.title}</h1>
         <hr className='horizontal-line'/>
-				<p>{data.director}</p>
-				<p>{data.producer}</p>
-				<p>{data.release_date}</p>
+				<div className='data'>
+          <p className='data__content'>Director</p>
+          <p className='data__content'>Producer</p>
+          <p className='data__content'>Release date</p>
+          <p className='data__content'>{data.director}</p>
+          <p className='data__content'>{data.producer}</p>
+          <p className='data__content'>{data.release_date}</p>
+        </div>
         <hr className='horizontal-line'/>
-				<p>characters</p>
-        {data.characters.map(character => (
-          // <a style={{display: 'block'}} href={character}>{character}</a>
-          <Link style={{display: 'block'}} to={`/character/` + getIdFromLink(character)}>{character}</Link>
-        ))}
+				<p className='data__content'>Characters</p>
+        <div className='list'>
+          {data.characters.map(character => (
+            // <a style={{display: 'block'}} href={character}>{character}</a>
+            <Link className='data__link' style={{display: 'block'}} to={`/character/` + getIdFromLink(character)}>{getIdFromLink(character)}</Link>
+          ))}
+        </div>
 				{/* <p>planets</p>
         {data.planets.map(planet => (
           // <a style={{display: 'block'}}>{planet}</a>

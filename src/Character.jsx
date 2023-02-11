@@ -52,18 +52,27 @@ export const Character = ({ backgroundDark }) => {
       <>
         <h1 className="title">{data.name}</h1>
         <hr className='horizontal-line'/>
-        <p>{data.height}</p>
-        <p>{data.mass}</p>
-        <p>{data.hair_color}</p>
-        <p>{data.eye_color}</p>
-        <p>{data.skin_color}</p>
-        <p>{data.birth_year}</p>
-        <p>{data.gender}</p>
+        <div className='data'>
+          <p className='data__content'>Height</p>
+          <p className='data__content'>Mass</p>
+          <p className='data__content'>Hair color</p>
+          <p className='data__content'>{data.height}</p>
+          <p className='data__content'>{data.mass}</p>
+          <p className='data__content'>{data.hair_color}</p>
+          <p className='data__content'>Eye color</p>
+          <p className='data__content'>Birth Year</p>
+          <p className='data__content'>Gender</p>
+          <p className='data__content'>{data.eye_color}</p>
+          <p className='data__content'>{data.birth_year}</p>
+          <p className='data__content'>{data.gender}</p>
+        </div>
         <hr className='horizontal-line'/>
         <p>films</p>
-        {data.films.map(film => (
-          <Link style={{display: 'block'}} to={`/film/` + getIdFromLink(film)}>{ film }</Link>
-        ))}
+        <div className='data'>
+          {data.films.map(film => (
+            <Link className='data__link--character' style={{display: 'block'}} to={`/film/` + getIdFromLink(film)}>{ film }</Link>
+          ))}
+        </div>
 				{/* <p>species</p>
         {data.species.map(specie => (
           <p>{ specie }</p>

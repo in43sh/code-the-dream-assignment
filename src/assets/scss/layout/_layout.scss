@@ -10,9 +10,30 @@
     font-size: 8rem;
 }
 
-
 .horizontal-line {
     margin: 5rem 0;
+}
+
+.data {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: space-evenly;
+    row-gap: 1rem;
+
+    &__content {
+        font-size: 2rem;
+        font-weight: 400;
+    }
+
+    &__link {
+        font-size: 1.6rem;
+        color: var(--color-secondary);
+    }
+}
+
+.list {
+    display: flex;
+    gap: .5rem;
 }
 
 .loader-container {
@@ -38,5 +59,20 @@
 
     .horizontal-line {
         margin: 10rem 0;
+    }
+
+    .data {
+        &__content {
+            font-size: 4.5rem;
+        }
+
+        &__link {
+            font-size: 2rem;
+            color: var(--color-secondary);
+
+            &--character {
+            color: var(--color-primary);
+            }
+        }
     }
 }

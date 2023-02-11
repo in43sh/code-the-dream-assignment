@@ -95,6 +95,26 @@ body {
   margin: 5rem 0;
 }
 
+.data {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-content: space-evenly;
+  row-gap: 1rem;
+}
+.data__content {
+  font-size: 2rem;
+  font-weight: 400;
+}
+.data__link {
+  font-size: 1.6rem;
+  color: var(--color-secondary);
+}
+
+.list {
+  display: flex;
+  gap: 0.5rem;
+}
+
 .loader-container {
   width: 100px;
   height: 100px;
@@ -118,6 +138,17 @@ body {
 
   .horizontal-line {
     margin: 10rem 0;
+  }
+
+  .data__content {
+    font-size: 4.5rem;
+  }
+  .data__link {
+    font-size: 2rem;
+    color: var(--color-secondary);
+  }
+  .data__link--character {
+    color: var(--color-primary);
   }
 }
 
