@@ -79,8 +79,8 @@ body {
 }
 
 .error {
-  font-size: 2rem;
   color: red;
+  font-size: 2rem;
 }
 
 @media only screen and (min-width: 768px) {
@@ -129,10 +129,6 @@ body {
   font-size: 8rem;
 }
 
-.horizontal-line {
-  margin: 5rem 0;
-}
-
 .data {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -171,10 +167,6 @@ body {
 
   .title {
     font-size: 15.8rem;
-  }
-
-  .horizontal-line {
-    margin: 10rem 0;
   }
 
   .data__content {

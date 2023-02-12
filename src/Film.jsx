@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { useParams, Link } from 'react-router-dom';
 import styled from 'styled-components';
+import { HorizontalLine } from './HorizontalLine';
 import { Loader } from './Loader';
 
 const Section = styled.div`
@@ -47,7 +48,7 @@ export const Film = ({ backgroundDark }) => {
 		{data ?
 			<>
 				<h1 className="title">{data.title}</h1>
-        <hr className='horizontal-line'/>
+        <HorizontalLine backgroundDark={backgroundDark} />
 				<div className='data'>
           <p className='data__content bold'>Director</p>
           <p className='data__content bold'>Producer</p>
@@ -56,7 +57,7 @@ export const Film = ({ backgroundDark }) => {
           <p className='data__content'>{data.producer}</p>
           <p className='data__content'>{data.release_date}</p>
         </div>
-        <hr className='horizontal-line'/>
+        <HorizontalLine backgroundDark={backgroundDark} />
 				<p className='data__content'>Characters</p>
         <div className='list'>
           {data.characters.map(character => (
