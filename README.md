@@ -5,7 +5,7 @@ eslint
 
 ## Tech stack and tooling that are used to build this site
 
-- HTML5 - Sematic tags
+- HTML5 - Semantic tags
 - CSS3 - Flex, Animation, Transition, Background
 - React
 - styled-components
