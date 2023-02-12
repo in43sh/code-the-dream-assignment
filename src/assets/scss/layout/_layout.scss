@@ -1,41 +1,41 @@
 .form-outer {
-    height: 100vh;
-    display: grid;
-    background-color: var(--color-primary);
-    color: var(--color-secondary);
+  height: 100vh;
+  display: grid;
+  background-color: var(--color-primary);
+  color: var(--color-secondary);
 }
 
 .form {
-    place-self: center;
+  place-self: center;
 
-    &__radio {
-        font-size: 2rem;
-    }
+  &__radio {
+    font-size: 2rem;
+  }
 
-    &__label {
-        font-size: 2rem;
-    }
+  &__label {
+    font-size: 2rem;
+  }
 
-    &__number {
-        font-size: 2rem;
-    }
+  &__number {
+    font-size: 2rem;
+  }
 
-    &__submit {
-        font-size: 2rem;
-    }
+  &__submit {
+    font-size: 2rem;
+  }
 }
 
 .section {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    background-color: var(--color-primary);
-    color: var(--color-secondary);
-    padding: 9rem 5rem;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color-primary);
+  color: var(--color-secondary);
+  padding: 9rem 5rem;
 }
 
 .title {
-    font-size: 8rem;
+  font-size: 8rem;
 }
 
 // .horizontal-line {
@@ -43,74 +43,74 @@
 // }
 
 .data {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    justify-content: space-evenly;
-    row-gap: 1rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-content: space-evenly;
+  row-gap: 1rem;
 
-    &__content {
-        font-size: 2rem;
-        font-weight: 400;
-    }
+  &__content {
+    font-size: 2rem;
+    font-weight: 400;
+  }
 
-    &__link {
-        font-size: 1.6rem;
-    }
+  &__link {
+    font-size: 1.6rem;
+  }
 }
 
 .list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: .5rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
 
-    &__title {
-        margin-bottom: 1.5rem;
-    }
+  &__title {
+    margin-bottom: 1.5rem;
+  }
 }
 
 .loader-container {
-    width: 100px;
-    height: 100px;
-    position: absolute;
-    left: 50%;
-    margin-left: -50px;
-    top: 50%;
-    margin-top: -50px;
-    display: flex;
-    justify-content: center;
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  left: 50%;
+  margin-left: -50px;
+  top: 50%;
+  margin-top: -50px;
+  display: flex;
+  justify-content: center;
 }
 
 @media only screen and (min-width: 768px) {
-    .section {
-        padding: 17.8rem 10rem;
+  .section {
+    padding: 17.8rem 10rem;
+  }
+
+  .title {
+    font-size: 15.8rem;
+  }
+
+  // .horizontal-line {
+  //     margin: 10rem 0;
+  // }
+
+  .data {
+    &__content {
+      font-size: 4.5rem;
     }
 
-    .title {
-        font-size: 15.8rem;
+    &__link {
+      font-size: 2rem;
+      color: var(--color-secondary);
+
+      &--character {
+        color: var(--color-primary);
+      }
     }
+  }
 
-    // .horizontal-line {
-    //     margin: 10rem 0;
-    // }
-
-    .data {
-        &__content {
-            font-size: 4.5rem;
-        }
-
-        &__link {
-            font-size: 2rem;
-            color: var(--color-secondary);
-
-            &--character {
-            color: var(--color-primary);
-            }
-        }
+  .list {
+    &__title {
+      margin-bottom: 2rem;
     }
-
-    .list {
-        &__title {
-            margin-bottom: 2rem;
-        }
-    }
+  }
 }
