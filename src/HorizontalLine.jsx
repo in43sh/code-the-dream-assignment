@@ -3,6 +3,7 @@ import styled from "styled-components";
 const Line = styled.hr`
     margin: 5rem 0;
     height: 1px;
+    width: ${(({ size }) => (size ? `${size}%` : "100%"))};
     background-color: ${(({ backgroundDark }) => (backgroundDark ? "var(--color-secondary)" : "var(--color-primary)"))};
     border: none;
 
@@ -12,8 +13,8 @@ const Line = styled.hr`
     }
 `
 
-export const HorizontalLine = ({ backgroundDark, test }) => {
+export const HorizontalLine = ({ backgroundDark, size }) => {
     return (
-        <Line backgroundDark={ backgroundDark } test={ test } />
+        <Line backgroundDark={ backgroundDark } size={ size } />
     )
 }

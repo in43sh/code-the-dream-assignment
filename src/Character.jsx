@@ -46,8 +46,8 @@ export const Character = ({ backgroundDark }) => {
       {data ?
       <>
         <h1 className="title">{data.name}</h1>
-        {/* <HorizontalLine width={"60"} backgroundDark={backgroundDark} /> */}
-        <HorizontalLine backgroundDark={backgroundDark} />
+        <HorizontalLine size={75} backgroundDark={backgroundDark} />
+        {/* <HorizontalLine backgroundDark={backgroundDark} /> */}
         <div className='data'>
           <p className='data__content bold'>Height</p>
           <p className='data__content bold'>Mass</p>
@@ -62,16 +62,16 @@ export const Character = ({ backgroundDark }) => {
           <p className='data__content'>{data.birth_year}</p>
           <p className='data__content'>{data.gender}</p>
         </div>
-        {/* <HorizontalLine width={"100"} backgroundDark={backgroundDark} /> */}
-        <HorizontalLine backgroundDark={backgroundDark} />
+        <HorizontalLine size={100} backgroundDark={backgroundDark} />
+        {/* <HorizontalLine backgroundDark={backgroundDark} /> */}
         <p className='data__content'>Films</p>
         <div className='list'>
           {data.films.map(film => (
-            <Link key={getIdFromLink(character)} className='data__link' style={{display: 'block', color: 'var(--color-primary)'}} to={`/film/` + getIdFromLink(film)}>{ getIdFromLink(film) }</Link>
+            <Link key={getIdFromLink(film)} className='data__link' style={{display: 'block', color: 'var(--color-primary)'}} to={`/film/` + getIdFromLink(film)}>{ getIdFromLink(film) }</Link>
           ))}
         </div>
-        {/* <HorizontalLine width={"100"} backgroundDark={backgroundDark} /> */}
-        <HorizontalLine backgroundDark={backgroundDark} />
+        <HorizontalLine size={100} backgroundDark={backgroundDark} />
+        {/* <HorizontalLine backgroundDark={backgroundDark} /> */}
        </> : error ? <p className='error'>Error { error.status }</p> : <div className='loader-container'>
         <Loader backgroundDark={ backgroundDark } />
        </div>

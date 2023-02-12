@@ -48,8 +48,8 @@ export const Film = ({ backgroundDark }) => {
 		{data ?
 			<>
 				<h1 className="title">{data.title}</h1>
-        {/* <HorizontalLine width={"60"} backgroundDark={backgroundDark} /> */}
-        <HorizontalLine backgroundDark={backgroundDark} />
+        <HorizontalLine size={75} backgroundDark={backgroundDark} />
+        {/* <HorizontalLine backgroundDark={backgroundDark} /> */}
 				<div className='data'>
           <p className='data__content bold'>Director</p>
           <p className='data__content bold'>Producer</p>
@@ -58,7 +58,7 @@ export const Film = ({ backgroundDark }) => {
           <p className='data__content'>{data.producer}</p>
           <p className='data__content'>{data.release_date}</p>
         </div>
-        {/* <HorizontalLine width={"100"} backgroundDark={backgroundDark} /> */}
+        <HorizontalLine size={100} backgroundDark={backgroundDark} />
         {/* <HorizontalLine backgroundDark={backgroundDark} /> */}
 				<p className='data__content'>Characters</p>
         <div className='list'>
@@ -66,8 +66,8 @@ export const Film = ({ backgroundDark }) => {
             <Link key={getIdFromLink(character)} className='data__link' style={{display: 'block', color: 'var(--color-secondary)'}} to={`/character/` + getIdFromLink(character)}>{getIdFromLink(character)}</Link>
           ))}
         </div>
-        {/* <HorizontalLine width={"100"} backgroundDark={backgroundDark} /> */}
-        <HorizontalLine backgroundDark={backgroundDark} />
+        <HorizontalLine size={100} backgroundDark={backgroundDark} />
+        {/* <HorizontalLine backgroundDark={backgroundDark} /> */}
 			</> : error ? <p className='error'>Error { error.status }</p> : <div className='loader-container'>
         <Loader backgroundDark={ backgroundDark } />
       </div>
