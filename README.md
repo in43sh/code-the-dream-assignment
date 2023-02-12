@@ -15,7 +15,7 @@ eslint
 - Git, GitHub
 - Markdown
 
-## To use my project locally, you would need to download my project and inside of it run the following command:
+## To use my project locally, you would need to download my project and inside of it run the following command
 
     npm install
 
