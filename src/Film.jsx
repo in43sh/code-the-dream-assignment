@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
-import { useParams, Link } from "react-router-dom";
-import styled from "styled-components";
-import loader from './assets/images/loader.svg';
+import { useParams, Link } from 'react-router-dom';
+import styled from 'styled-components';
+import { Loader } from './Loader';
 
 const Section = styled.div`
   background-color: ${(({ backgroundDark }) => (backgroundDark ? "var(--color-primary)" : "var(--color-secondary)"))};
@@ -46,7 +46,6 @@ export const Film = ({ backgroundDark }) => {
 
   return (
     <Section backgroundDark={backgroundDark} className='section'>
-{/* <div className="section"> */}
 		{data ?
 			<>
 				<h1 className="title">{data.title}</h1>
@@ -89,10 +88,10 @@ export const Film = ({ backgroundDark }) => {
         ))} */}
 			</> :
       <div className='loader-container'>
-        <img className='loader' src={loader} />
+        {/* <img className='loader' src={loader} /> */}
+        <Loader backgroundDark={ backgroundDark } />
       </div>
 		}
-    {/* </div> */}
     </Section>
   )
 }
