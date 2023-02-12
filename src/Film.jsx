@@ -60,7 +60,7 @@ export const Film = ({ backgroundDark }) => {
         </div>
         <HorizontalLine size={100} backgroundDark={backgroundDark} />
         {/* <HorizontalLine backgroundDark={backgroundDark} /> */}
-				<p className='data__content'>Characters</p>
+				<p className='data__content list__title'>Characters</p>
         <div className='list'>
           {data.characters.map(character => (
             <Link key={getIdFromLink(character)} className='data__link' style={{display: 'block', color: 'var(--color-secondary)'}} to={`/character/` + getIdFromLink(character)}>{getIdFromLink(character)}</Link>

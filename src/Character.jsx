@@ -64,7 +64,7 @@ export const Character = ({ backgroundDark }) => {
         </div>
         <HorizontalLine size={100} backgroundDark={backgroundDark} />
         {/* <HorizontalLine backgroundDark={backgroundDark} /> */}
-        <p className='data__content'>Films</p>
+        <p className='data__content list__title'>Films</p>
         <div className='list'>
           {data.films.map(film => (
             <Link key={getIdFromLink(film)} className='data__link' style={{display: 'block', color: 'var(--color-primary)'}} to={`/film/` + getIdFromLink(film)}>{ getIdFromLink(film) }</Link>

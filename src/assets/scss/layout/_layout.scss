@@ -62,6 +62,10 @@
     display: flex;
     flex-wrap: wrap;
     gap: .5rem;
+
+    &__title {
+        margin-bottom: 1.5rem;
+    }
 }
 
 .loader-container {
@@ -101,6 +105,12 @@
             &--character {
             color: var(--color-primary);
             }
+        }
+    }
+
+    .list {
+        &__title {
+            margin-bottom: 2rem;
         }
     }
 }
