@@ -12,8 +12,8 @@ const Line = styled.hr`
     }
 `
 
-export const HorizontalLine = ({ backgroundDark }) => {
+export const HorizontalLine = ({ backgroundDark, test }) => {
     return (
-        <Line backgroundDark={ backgroundDark } />
+        <Line backgroundDark={ backgroundDark } test={ test } />
     )
 }
