@@ -16,9 +16,10 @@ eslint
 - Markdown
 
 ## To use my project locally, you would need to download my project and inside of it run the following command:
-npm install
+
+    npm install
 
 After all packages have been installed, you can run the command:
-npm run dev
+    npm run dev
 
 As you are doing it in the console, you should be able to see the URL link. Once you go to that link you will be able to see my website.
