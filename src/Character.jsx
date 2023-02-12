@@ -11,7 +11,6 @@ const Section = styled.div`
 export const Character = ({ backgroundDark }) => {
   const { id } = useParams();
   const [data, setData] = useState(null);
-  const [dataFromLink, setDataFromLink] = useState(null);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(true);
 
@@ -37,16 +36,13 @@ export const Character = ({ backgroundDark }) => {
   }, []);
 
   const getIdFromLink = (url) => {
-    // const str = new URL(url).pathname.split('/').filter(Boolean).pop();
     const str = new URL(url).pathname.split('/').filter(Boolean).pop();
-    // const str = url.substring(url.lastIndexOf('/') + 1)
     console.log("str => ", str);
     return str
   }
 
   return (
     <Section backgroundDark={backgroundDark} className="section">
-      {/* <button onClick={() => fetchDataAboutUrl("https://swapi.dev/api/films/1/")}>click</button> */}
       {data ?
       <>
         <h1 className="title">{data.name}</h1>
@@ -72,20 +68,6 @@ export const Character = ({ backgroundDark }) => {
             <Link className='data__link--character' style={{display: 'block'}} to={`/film/` + getIdFromLink(film)}>{ film }</Link>
           ))}
         </div>
-				{/* <p>species</p>
-        {data.species.map(specie => (
-          <p>{ specie }</p>
-        ))}
-        <p>homeworld</p>
-        <p>{ data.homeworld }</p>
-        <p>starships</p>
-        {data.starships.map(starship => (
-          <p>{ starship }</p>
-        ))}
-				<p>vehicles</p>
-        {data.vehicles.map(vehicle => (
-          <p>{ vehicle }</p>
-        ))} */}
        </> :
        <div className='loader-container'>
         <Loader backgroundDark={ backgroundDark } />

@@ -8,11 +8,16 @@ export const Form = () => {
         id: "",
         type: ""
     })
+    const [inputMaxValue, setInputMaxValue] = useState(0);
 
     const handleChange = (event) => {
         const { name, value } = event.target;
-        console.log(name, value)
-        setFormValues({ ...formValues, [name]: value})
+        console.log(name, value);
+        if (value === "character") {
+            setInputMaxValue(83)
+        } else { setInputMaxValue(6) };
+        console.log("inputMaxValue => ", inputMaxValue);
+        setFormValues({ ...formValues, [name]: value});
     }
 
     const handleSubmit = (e) => {
@@ -22,21 +27,18 @@ export const Form = () => {
         navigate(`/${formValues.type}/${formValues.id}`, {state: {formValues}})
     }
 
-    const [isFormVisible, setIsFormVisible] = useState(true)
-    const inputFileRef = useRef();
-
     return (
         <div className="form-outer">
-            {isFormVisible ?
             <form className="form" onSubmit={handleSubmit}>
-                <input className="form__radio" required type="radio" id="character" name="type" value="character" onChange={handleChange}/>
+                <input className="form__radio" required type="radio" id="character" name="type" value="character" onChange={(e) => handleChange(e)} />
                 <label className="form__label" htmlFor="character">Character</label><br />
-                <input className="form__radio" required type="radio" id="film" name="type" value="film" onChange={handleChange} />
+                <input className="form__radio" required type="radio" id="film" name="type" value="film" onChange={(e) => handleChange(e)} />
                 <label className="form__label" htmlFor="film">Film</label><br />
-                <input className="form__number" required type="number" id="number" name="id" value={formValues.id} onChange={handleChange} /><br/>
-                <button className="form__submit" type="submit">Save</button>
-            </form> : <View data={formValues}/>
-        }
+                {/* <input className="form__number" min="1" max="83" required type="number" id="number" name="id" value={formValues.id} onChange={handleChange} /><br/> */}
+                {/* <input className="form__number" min="1" max="6" required type="number" id="number" name="id" value={formValues.id} onChange={handleChange} /><br/> */}
+                <input className="form__number" min="1" max={inputMaxValue} required type="number" id="number" name="id" value={formValues.id} onChange={handleChange} /><br/>
+                <button className="form__submit" type="submit">Submit</button>
+            </form>
         </div>
     )
 }

@@ -37,9 +37,7 @@ export const Film = ({ backgroundDark }) => {
   }, []);
 
   const getIdFromLink = (url) => {
-    // const str = new URL(url).pathname.split('/').filter(Boolean).pop();
     const str = new URL(url).pathname.split('/').filter(Boolean).pop();
-    // const str = url.substring(url.lastIndexOf('/') + 1)
     console.log("str => ", str);
     return str
   }
@@ -62,33 +60,11 @@ export const Film = ({ backgroundDark }) => {
 				<p className='data__content'>Characters</p>
         <div className='list'>
           {data.characters.map(character => (
-            // <a style={{display: 'block'}} href={character}>{character}</a>
             <Link className='data__link' style={{display: 'block'}} to={`/character/` + getIdFromLink(character)}>{getIdFromLink(character)}</Link>
           ))}
         </div>
-				{/* <p>planets</p>
-        {data.planets.map(planet => (
-          // <a style={{display: 'block'}}>{planet}</a>
-          <p>{ planet }</p>
-        ))}
-        <p>starships</p>
-        {data.starships.map(starship => (
-          // <a style={{display: 'block'}}>{starship}</a>
-          <p>{ starship }</p>
-        ))}
-				<p>vehicles</p>
-        {data.vehicles.map(vehicle => (
-          // <a style={{display: 'block'}}>{vehicle}</a>
-          <p> { vehicle }</p>
-        ))}
-				<p>species</p>
-        {data.species.map(specie => (
-          // <a style={{display: 'block'}}>{specie}</a>
-          <p> { specie }</p>
-        ))} */}
 			</> :
       <div className='loader-container'>
-        {/* <img className='loader' src={loader} /> */}
         <Loader backgroundDark={ backgroundDark } />
       </div>
 		}
