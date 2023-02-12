@@ -20,6 +20,7 @@ eslint
     npm install
 
 After all packages have been installed, you can run the command:
+
     npm run dev
 
 As you are doing it in the console, you should be able to see the URL link. Once you go to that link you will be able to see my website.
