@@ -74,6 +74,20 @@ body {
   font-family: -apple-system, "Helvetica Neue", "Lucida Grande";
 }
 
+.bold {
+  font-weight: bold !important;
+}
+
+.error {
+  font-size: 2rem;
+  color: red;
+}
+
+@media only screen and (min-width: 768px) {
+  .error {
+    font-size: 6rem;
+  }
+}
 :root {
   --color-primary: #2A3747;
   --color-secondary: #D2CBA8;
@@ -131,7 +145,6 @@ body {
 }
 .data__link {
   font-size: 1.6rem;
-  color: var(--color-secondary);
 }
 
 .list {

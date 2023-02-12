@@ -1,6 +1,5 @@
 import { useState, useRef } from "react";
 import { useNavigate } from "react-router-dom";
-import View from './View';
 
 export const Form = () => {
     const navigate = useNavigate();
@@ -13,6 +12,8 @@ export const Form = () => {
     const handleChange = (event) => {
         const { name, value } = event.target;
         console.log(name, value);
+        // here I'm trying to change the max limit of the number that the use can
+        // put into the input field but I couldn't figure out how to change it with JS
         if (value === "character") {
             setInputMaxValue(83)
         } else { setInputMaxValue(6) };
@@ -34,9 +35,9 @@ export const Form = () => {
                 <label className="form__label" htmlFor="character">Character</label><br />
                 <input className="form__radio" required type="radio" id="film" name="type" value="film" onChange={(e) => handleChange(e)} />
                 <label className="form__label" htmlFor="film">Film</label><br />
-                {/* <input className="form__number" min="1" max="83" required type="number" id="number" name="id" value={formValues.id} onChange={handleChange} /><br/> */}
+                {/* <input className="form__number" min="1" max={inputMaxValue} required type="number" id="number" name="id" value={formValues.id} onChange={handleChange} /><br/> */}
                 {/* <input className="form__number" min="1" max="6" required type="number" id="number" name="id" value={formValues.id} onChange={handleChange} /><br/> */}
-                <input className="form__number" min="1" max={inputMaxValue} required type="number" id="number" name="id" value={formValues.id} onChange={handleChange} /><br/>
+                <input className="form__number" min="1" max="83" required type="number" id="number" name="id" value={formValues.id} onChange={handleChange} /><br/>
                 <button className="form__submit" type="submit">Submit</button>
             </form>
         </div>

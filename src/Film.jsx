@@ -4,15 +4,18 @@ import styled from 'styled-components';
 import { Loader } from './Loader';
 
 const Section = styled.div`
+  position: relative;
   background-color: ${(({ backgroundDark }) => (backgroundDark ? "var(--color-primary)" : "var(--color-secondary)"))};
-  color: ${(({ backgroundDark }) => (backgroundDark ? "var(--color-secondary" :"var(--color-secondary)"))};
+  color: ${(({ backgroundDark }) => (backgroundDark ? "var(--color-secondary" : "var(--color-primary)"))};
 `
 
 export const Film = ({ backgroundDark }) => {
   const { id } = useParams();
   const [data, setData] = useState(null);
   const [error, setError] = useState(null);
-  const [loading, setLoading] = useState(true);
+  // decided to take a different approach with checking if
+  // the data was loaded but want to keep this to try in the future
+  // const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     fetch(`https://swapi.dev/api/films/${id}`)
@@ -22,23 +25,20 @@ export const Film = ({ backgroundDark }) => {
         }
         throw response;
       })
-      .then(data => {
-          setData(data)
-          console.log("data => ", data);
-      })
+      .then(data => setData(data))
       .catch(error => {
-          console.error("Error fetching data => ", error)
+          // console.error("Error fetching data => ", error)
           setError(error);
         }
       )
-      .finally(() => {
-        setLoading(false);
-      })
+      // .finally(() => {
+      //   setLoading(false);
+      // })
   }, []);
 
   const getIdFromLink = (url) => {
     const str = new URL(url).pathname.split('/').filter(Boolean).pop();
-    console.log("str => ", str);
+    // console.log("str => ", str);
     return str
   }
 
@@ -49,9 +49,9 @@ export const Film = ({ backgroundDark }) => {
 				<h1 className="title">{data.title}</h1>
         <hr className='horizontal-line'/>
 				<div className='data'>
-          <p className='data__content'>Director</p>
-          <p className='data__content'>Producer</p>
-          <p className='data__content'>Release date</p>
+          <p className='data__content bold'>Director</p>
+          <p className='data__content bold'>Producer</p>
+          <p className='data__content bold'>Release date</p>
           <p className='data__content'>{data.director}</p>
           <p className='data__content'>{data.producer}</p>
           <p className='data__content'>{data.release_date}</p>
@@ -60,11 +60,10 @@ export const Film = ({ backgroundDark }) => {
 				<p className='data__content'>Characters</p>
         <div className='list'>
           {data.characters.map(character => (
-            <Link className='data__link' style={{display: 'block'}} to={`/character/` + getIdFromLink(character)}>{getIdFromLink(character)}</Link>
+            <Link className='data__link' style={{display: 'block', color: 'var(--color-secondary)'}} to={`/character/` + getIdFromLink(character)}>{getIdFromLink(character)}</Link>
           ))}
         </div>
-			</> :
-      <div className='loader-container'>
+			</> : error ? <p className='error'>Error { error.status }</p> : <div className='loader-container'>
         <Loader backgroundDark={ backgroundDark } />
       </div>
 		}
