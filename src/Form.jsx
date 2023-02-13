@@ -1,55 +1,100 @@
-import { useState, useRef } from "react";
+import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 export const Form = () => {
-    const navigate = useNavigate();
-    const [formValues, setFormValues] = useState({
-        id: "",
-        type: ""
-    })
-    const [inputMaxValue, setInputMaxValue] = useState(0);
+  const navigate = useNavigate();
+  const [formValues, setFormValues] = useState({
+    id: "0",
+    type: "",
+  });
+  const [maxInputLimit, setMaxInputLimit] = useState("0");
 
-    const handleChange = (event) => {
-        const { name, value } = event.target;
-        console.log(name, value);
-        // here I'm trying to change the max limit of the number that the use can
-        // put into the input field but I couldn't figure out how to change it with JS
-        if (value === "character") {
-            setInputMaxValue(83)
-        } else { setInputMaxValue(6) };
-        console.log("inputMaxValue => ", inputMaxValue);
-        setFormValues({ ...formValues, [name]: value});
+  const switcherHandler = (e) => {
+    if (e.target.value === "character") {
+      setMaxInputLimit("83");
+    } else {
+      setMaxInputLimit("6");
+      if (parseInt(formValues.id) > 6) {
+        setFormValues({ ...formValues, ["id"]: "6" });
+      }
     }
+    setFormValues({ ...formValues, ["type"]: e.target.value });
+  };
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        console.log(formValues);
-        setFormValues(false);
-        navigate(`/${formValues.type}/${formValues.id}`, {state: {formValues}})
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+    if (name === "id") {
+      setFormValues({ ...formValues, ["id"]: value });
     }
+  };
 
-    return (
-        <div className="form-outer">
-            <form className="form" onSubmit={handleSubmit}>
-                <p className="form__question">What are we looking for?</p><br />
-                <div className="form__input-container">
-                    <label className="form__label" htmlFor="character">Character</label>
-                    <input className="form__radio" required type="radio" id="character" name="type" value="character" onChange={(e) => handleChange(e)} />
-                </div>
-                <div className="form__input-container">
-                    <label className="form__label" htmlFor="film">Film</label>
-                    <input className="form__radio" required type="radio" id="film" name="type" value="film" onChange={(e) => handleChange(e)} />
-                </div>
-                <div className="form__input-container">
-                    <span className="form__search-for">Search for</span>
-                    <input className="form__number" min="1" max={inputMaxValue} required type="number" id="number" name="id" value={formValues.id} onChange={handleChange} />
-                </div>
-                {/* <input className="form__number" min="1" max="6" required type="number" id="number" name="id" value={formValues.id} onChange={handleChange} /><br/> */}
-                {/* <input className="form__number" min="1" max="83" required type="number" id="number" name="id" value={formValues.id} onChange={handleChange} /><br/> */}
-                <button className="form__submit" type="submit">Submit</button>
-            </form>
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    navigate(`/${formValues.type}/${formValues.id}`, { state: { formValues } });
+  };
+
+  return (
+    <div className="form-outer">
+      <form className="form" onSubmit={handleSubmit}>
+        <p className="form__question">What are we looking for?</p>
+        <br />
+        <div className="form__input-container">
+          <label className="form__label" htmlFor="character">
+            Character
+          </label>
+          <input
+            className="form__radio"
+            required
+            type="radio"
+            id="character"
+            name="type"
+            value="character"
+            onChange={(e) => switcherHandler(e)}
+          />
         </div>
-    )
-}
+        <div className="form__input-container">
+          <label className="form__label" htmlFor="film">
+            Film
+          </label>
+          <input
+            className="form__radio"
+            required
+            type="radio"
+            id="film"
+            name="type"
+            value="film"
+            onChange={(e) => switcherHandler(e)}
+          />
+        </div>
+        {maxInputLimit !== "0" ? (
+          <>
+            <div className="form__input-container">
+              <span className="form__search-for--align-baseline">
+                Search for
+              </span>
+              <input
+                className="form__number"
+                min="1"
+                max={maxInputLimit}
+                required
+                type="number"
+                id="number"
+                name="id"
+                value={formValues.id}
+                onChange={handleChange}
+              />
+            </div>
+
+            <button className="form__submit" type="submit">
+              Submit
+            </button>
+          </>
+        ) : (
+          <></>
+        )}
+      </form>
+    </div>
+  );
+};
 
 export default Form;

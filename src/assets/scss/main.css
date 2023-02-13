@@ -106,6 +106,14 @@ body {
   align-items: center;
   place-self: center;
 }
+.form__input-container {
+  display: flex;
+  gap: 1rem;
+  align-items: baseline;
+}
+.form__input-container--align-baseline {
+  align-items: baseline;
+}
 .form__question {
   font-size: 2rem;
 }
@@ -202,7 +210,6 @@ body {
   .form__input-container {
     display: flex;
     gap: 1rem;
-    align-items: baseline;
   }
   .form__question {
     font-size: 4.5rem;
@@ -211,9 +218,20 @@ body {
     font-size: 3rem;
   }
   .form__radio {
-    width: 2rem;
-    height: 2rem;
     font-size: 2rem;
+    appearance: none;
+    background-color: #fff;
+    width: 30px;
+    height: 30px;
+    border: 2px solid #C1BC9E;
+    border-radius: 20px;
+    background-color: #2A3747;
+    display: inline-grid;
+    place-content: center;
+  }
+  .form__radio::before {
+    width: 20px;
+    height: 20px;
   }
   .form__label {
     font-size: 15.8rem;
