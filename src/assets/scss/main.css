@@ -114,6 +114,31 @@ body {
 }
 .form__radio {
   font-size: 2rem;
+  appearance: none;
+  background-color: #fff;
+  width: 15px;
+  height: 15px;
+  border: 2px solid #C1BC9E;
+  border-radius: 10px;
+  background-color: #2A3747;
+  display: inline-grid;
+  place-content: center;
+}
+.form__radio::before {
+  content: "";
+  width: 10px;
+  height: 10px;
+  transform: scale(0);
+  transform-origin: bottom left;
+  background-color: #2A3747;
+  clip-path: polygon(13% 50%, 34% 66%, 81% 2%, 100% 18%, 39% 100%, 0 71%);
+}
+.form__radio:checked::before {
+  transform: scale(1);
+}
+.form__radio:checked {
+  background-color: #C1BC9E;
+  border: 2px solid #C1BC9E;
 }
 .form__label {
   font-size: 2rem;
