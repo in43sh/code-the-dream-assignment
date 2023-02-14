@@ -1,7 +1,6 @@
 # Code-the-Dream-School Advanced Pre-work
 
-Source code of Code the Dream School Advanced Pre-work. The site is also published to Netlify:
-eslint
+Source code of Code the Dream School Advanced Pre-work. The site is also published to Netlify: https://code-the-dream.netlify.app
 
 ## Tech stack and tooling that are used to build this site
 
@@ -24,3 +23,9 @@ After all packages have been installed, you can run the command:
     npm run dev
 
 As you are doing it in the console, you should be able to see the URL link. Once you go to that link you will be able to see my website.
+
+## To-do list
+
+- Instead of having two separate components Film and Character have one component
+- Improve styling
+- Fix the issue on Netlify with page loading after being reloaded
