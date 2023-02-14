@@ -15,16 +15,16 @@ export const Form = () => {
     } else {
       setMaxInputLimit("6");
       if (parseInt(formValues.id) > 6) {
-        setFormValues({ ...formValues, ["id"]: "6" });
+        setFormValues({ ...formValues, "id": "6" });
       }
     }
-    setFormValues({ ...formValues, ["type"]: e.target.value });
+    setFormValues({ ...formValues, "type": e.target.value });
   };
 
   const handleChange = (event) => {
     const { name, value } = event.target;
     if (name === "id") {
-      setFormValues({ ...formValues, ["id"]: value });
+      setFormValues({ ...formValues, "id": value });
     }
   };
 

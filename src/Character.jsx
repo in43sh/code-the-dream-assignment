@@ -35,7 +35,7 @@ export const Character = ({ backgroundDark }) => {
     // .finally(() => {
     //   setLoading(false);
     // })
-  }, []);
+  }, [id]);
 
   const getIdFromLink = (url) => {
     const str = new URL(url).pathname.split("/").filter(Boolean).pop();
