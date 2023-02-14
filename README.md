@@ -1,6 +1,6 @@
 # Code-the-Dream-School Advanced Pre-work
 
-Source code of Code the Dream School Advanced Pre-work. The site is also published to Netlify: https://code-the-dream.netlify.app
+Source code of Code the Dream School Advanced Pre-work. The site is also published to Netlify: <https://code-the-dream.netlify.app/>
 
 ## Tech stack and tooling that are used to build this site
 
