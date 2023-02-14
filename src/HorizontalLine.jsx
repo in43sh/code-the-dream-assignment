@@ -9,6 +9,10 @@ const Line = styled.hr`
     border: none;
 
     @media only screen and (min-width: 768px) {
+        margin: 5rem 0;
+    }
+
+    @media only screen and (min-width: 1024px) {
         margin: 10rem 0;
         height: 1.5px;
     }

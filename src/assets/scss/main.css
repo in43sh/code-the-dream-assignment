@@ -257,9 +257,29 @@ body {
   }
 
   .section {
-    padding: 17.8rem 10rem;
+    padding: 10rem 6rem;
   }
 
+  .title {
+    font-size: 10rem;
+  }
+
+  .data__content {
+    font-size: 3.5rem;
+  }
+  .data__link {
+    font-size: 2rem;
+    color: var(--color-secondary);
+  }
+  .data__link--character {
+    color: var(--color-primary);
+  }
+
+  .list__title {
+    margin-bottom: 2rem;
+  }
+}
+@media only screen and (min-width: 1024px) {
   .title {
     font-size: 15.8rem;
   }
@@ -273,10 +293,6 @@ body {
   }
   .data__link--character {
     color: var(--color-primary);
-  }
-
-  .list__title {
-    margin-bottom: 2rem;
   }
 }
 
