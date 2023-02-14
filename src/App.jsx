@@ -4,19 +4,19 @@ import { Character } from "./Character";
 import { Film } from "./Film";
 
 function App() {
-  return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" index element={<Form />} />
-        <Route
-          path="/character/:id"
-          index
-          element={<Character backgroundDark={false} />}
-        />
-        <Route path="/film/:id" element={<Film backgroundDark={true} />} />
-      </Routes>
-    </BrowserRouter>
-  );
+    return (
+        <BrowserRouter>
+            <Routes>
+                <Route path="/" index element={<Form />} />
+                <Route
+                    path="/character/:id"
+                    index
+                    element={<Character backgroundDark={false} />}
+                />
+                <Route path="/film/:id" element={<Film backgroundDark />} />
+            </Routes>
+        </BrowserRouter>
+    );
 }
 
 export default App;
