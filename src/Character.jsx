@@ -39,7 +39,6 @@ export const Character = ({ backgroundDark }) => {
 
   const getIdFromLink = (url) => {
     const str = new URL(url).pathname.split("/").filter(Boolean).pop();
-    // console.log("str => ", str);
     return str;
   };
 
@@ -49,7 +48,6 @@ export const Character = ({ backgroundDark }) => {
         <>
           <h1 className="title">{data.name}</h1>
           <HorizontalLine size={75} backgroundDark={backgroundDark} />
-          {/* <HorizontalLine backgroundDark={backgroundDark} /> */}
           <div className="data">
             <p className="data__content bold">Height</p>
             <p className="data__content bold">Mass</p>
@@ -65,7 +63,6 @@ export const Character = ({ backgroundDark }) => {
             <p className="data__content">{data.gender}</p>
           </div>
           <HorizontalLine size={100} backgroundDark={backgroundDark} />
-          {/* <HorizontalLine backgroundDark={backgroundDark} /> */}
           <p className="data__content list__title">Films</p>
           <div className="list">
             {data.films.map((film) => (
@@ -80,7 +77,6 @@ export const Character = ({ backgroundDark }) => {
             ))}
           </div>
           <HorizontalLine size={100} backgroundDark={backgroundDark} />
-          {/* <HorizontalLine backgroundDark={backgroundDark} /> */}
         </>
       ) : error ? (
         <p className="error">Error {error.status}</p>

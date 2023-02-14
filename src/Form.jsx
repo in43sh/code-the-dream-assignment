@@ -69,7 +69,7 @@ export const Form = () => {
         {maxInputLimit !== "0" ? (
           <>
             <div className="form__input-container">
-              <span className="form__search-for--align-baseline">
+              <span className="form__search-for">
                 Search for
               </span>
               <input

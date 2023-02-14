@@ -30,7 +30,6 @@ export const Film = ({ backgroundDark }) => {
       })
       .then((data) => setData(data))
       .catch((error) => {
-        // console.error("Error fetching data => ", error)
         setError(error);
       });
     // .finally(() => {
@@ -40,7 +39,6 @@ export const Film = ({ backgroundDark }) => {
 
   const getIdFromLink = (url) => {
     const str = new URL(url).pathname.split("/").filter(Boolean).pop();
-    // console.log("str => ", str);
     return str;
   };
 
@@ -50,7 +48,6 @@ export const Film = ({ backgroundDark }) => {
         <>
           <h1 className="title">{data.title}</h1>
           <HorizontalLine size={75} backgroundDark={backgroundDark} />
-          {/* <HorizontalLine backgroundDark={backgroundDark} /> */}
           <div className="data">
             <p className="data__content bold">Director</p>
             <p className="data__content bold">Producer</p>
@@ -60,7 +57,6 @@ export const Film = ({ backgroundDark }) => {
             <p className="data__content">{data.release_date}</p>
           </div>
           <HorizontalLine size={100} backgroundDark={backgroundDark} />
-          {/* <HorizontalLine backgroundDark={backgroundDark} /> */}
           <p className="data__content list__title">Characters</p>
           <div className="list">
             {data.characters.map((character) => (
@@ -75,7 +71,6 @@ export const Film = ({ backgroundDark }) => {
             ))}
           </div>
           <HorizontalLine size={100} backgroundDark={backgroundDark} />
-          {/* <HorizontalLine backgroundDark={backgroundDark} /> */}
         </>
       ) : error ? (
         <p className="error">Error {error.status}</p>
