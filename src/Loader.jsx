@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const LoaderImage = styled.svg`
+const LoaderSVG = styled.svg`
     circle {
         fill: ${({ backgroundDark }) =>
             backgroundDark ? "var(--color-secondary)" : "var(--color-primary)"};
@@ -9,7 +9,7 @@ const LoaderImage = styled.svg`
 
 export const Loader = ({ backgroundDark }) => {
     return (
-        <LoaderImage
+        <LoaderSVG
             backgroundDark={backgroundDark}
             version="1.1"
             id="L4"
@@ -48,7 +48,7 @@ export const Loader = ({ backgroundDark }) => {
                     begin="0.3"
                 />
             </circle>
-        </LoaderImage>
+        </LoaderSVG>
     );
 };
 
